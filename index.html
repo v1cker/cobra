@@ -1,205 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
     <title>Cobra by wufeifei</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
-
-    <header>
-      <div class="container">
+    <div class="wrapper">
+      <header>
         <h1>Cobra</h1>
-        <h2>Cobra - static code security scan &amp; analyse</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/wufeifei/cobra/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/wufeifei/cobra/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/wufeifei/cobra" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
+        <p>Cobra - static code security scan &amp; analyse</p>
+        <p class="view"><a href="https://github.com/wufeifei/cobra">View the Project on GitHub <small>wufeifei/cobra</small></a></p>
+        <ul>
+          <li><a href="https://github.com/wufeifei/cobra/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/wufeifei/cobra/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/wufeifei/cobra">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h1>
 <a id="cobra" class="anchor" href="#cobra" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cobra</h1>
 
-<p><a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-2.6%7C2.7-yellow.svg" alt="Python 2.6|2.7"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000" alt="license"></a>
+<p><a href="https://wufeifei.com/"><img src="https://img.shields.io/badge/python-2.6%7C2.7-yellow.svg" alt="Python 2.6|2.7"></a> <a href="https://raw.githubusercontent.com/wufeifei/cobra/master/doc/COPYING"><img src="https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000" alt="license"></a>
  <a href="https://github.com/wufeifei/cobra"><img src="https://img.shields.io/github/stars/wufeifei/cobra.svg?style=social&amp;label=Star&amp;maxAge=2592000" alt="GitHub stars"></a>
  <a href="https://github.com/wufeifei"><img src="https://img.shields.io/github/followers/wufeifei.svg?style=social&amp;label=Follow&amp;maxAge=2592000" alt="GitHub followers"></a></p>
 
 <p>Static code analysis common security issues and scan common security vulnerabilities</p>
-
-<h3>
-<a id="scan-types" class="anchor" href="#scan-types" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scan Types</h3>
-
-<h4>
-<a id="1-diff-scan" class="anchor" href="#1-diff-scan" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Diff Scan</h4>
-
-<p>By comparing with the online code or the previous submission to find out the change code, and then only the changes to scan the code.</p>
-
-<h5>
-<a id="advantages-and-disadvantages" class="anchor" href="#advantages-and-disadvantages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advantages and disadvantages</h5>
-
-<p>Scanning speed, can immediately know the results of the scan. But the scanning range is small.</p>
-
-<h5>
-<a id="scene" class="anchor" href="#scene" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scene</h5>
-
-<p>for the daily release, we need to quickly know that this is the existence of the risk of the code, using the contrast scan will be able to know the results for the first time.</p>
-
-<h4>
-<a id="2-full-scan" class="anchor" href="#2-full-scan" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Full Scan</h4>
-
-<p>By playing the compression package or send Git/SVN address, decompression, download the project will be all the code for the full scan.</p>
-
-<h5>
-<a id="advantages-and-disadvantages-1" class="anchor" href="#advantages-and-disadvantages-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advantages and disadvantages</h5>
-
-<p>The scan speed is slow, but a comprehensive scan.</p>
-
-<h5>
-<a id="scene-1" class="anchor" href="#scene-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scene</h5>
-
-<p>The whole volume scan can be used for items that are not frequently published in history.</p>
-
-<h3>
-<a id="the-development-of-language-and-support-framework" class="anchor" href="#the-development-of-language-and-support-framework" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The development of language and support framework</h3>
-
-<p>In view of our current online projects mainly for PHP and JAVA, so we will support the two languages in a period.
-And do a good job of our current framework for compatibility, to ensure that we can cover most of the business online.</p>
-
-<table>
-<thead>
-<tr>
-<th>Developer of Language</th>
-<th>Framework</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PHP</td>
-<td>Kohana、Laravel</td>
-</tr>
-<tr>
-<td>JAVA</td>
-<td>Spring、Struts</td>
-</tr>
-</tbody>
-</table>
-
-<h3>
-<a id="supported-vulnerability-types" class="anchor" href="#supported-vulnerability-types" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported vulnerability types</h3>
-
-<p>A major sweep some of the more common and difficult to put an end to the loopholes, the follow-up to support a number of dynamic scanning.</p>
-
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Remark</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>XSS</td>
-<td>Cross-Site Scripting</td>
-</tr>
-<tr>
-<td>CSRF</td>
-<td>Cross-site request forgery</td>
-</tr>
-<tr>
-<td>SQL Injection</td>
-<td>SQL Injection</td>
-</tr>
-<tr>
-<td>Sensitive Data Exposure</td>
-<td>Sensitive Info Exposure、Back File Exposure、Code Exposure、Server Info Exposure、SVN/GIT Exposure...</td>
-</tr>
-<tr>
-<td>WebShell</td>
-<td>WebShell</td>
-</tr>
-<tr>
-<td>Backdoor</td>
-<td></td>
-</tr>
-<tr>
-<td>torjor</td>
-<td>Big torjor、Small torjor</td>
-</tr>
-<tr>
-<td>URL Redirector Abuse</td>
-<td></td>
-</tr>
-<tr>
-<td>Misconfiguration</td>
-<td></td>
-</tr>
-<tr>
-<td>LFI/RFI</td>
-<td>Local File Inclusion、Remote File Inclusion</td>
-</tr>
-<tr>
-<td>Command Execution</td>
-<td></td>
-</tr>
-<tr>
-<td>Code Execution</td>
-<td></td>
-</tr>
-<tr>
-<td>Header Injection</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-<h5>
-<a id="to-be-supported-by-the-type-of-vulnerability-follow-up-plan-to-gradually-access" class="anchor" href="#to-be-supported-by-the-type-of-vulnerability-follow-up-plan-to-gradually-access" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To be supported by the type of vulnerability (follow-up plan to gradually access)</h5>
-
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Remark</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Variable Coverage</td>
-<td></td>
-</tr>
-<tr>
-<td>CRLF Injection CRLF</td>
-<td></td>
-</tr>
-<tr>
-<td>Unauthorized Access</td>
-<td></td>
-</tr>
-<tr>
-<td>Weak Password</td>
-<td></td>
-</tr>
-<tr>
-<td>XML Injection</td>
-<td></td>
-</tr>
-<tr>
-<td>Brute Force</td>
-<td></td>
-</tr>
-</tbody>
-</table>
 
 <h3>
 <a id="screenshot" class="anchor" href="#screenshot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshot</h3>
@@ -210,12 +45,18 @@ And do a good job of our current framework for compatibility, to ensure that we 
 <a id="links" class="anchor" href="#links" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Links</h3>
 
 <ul>
+<li>Homepage:  <a href="http://wufeifei.github.io/cobra">http://wufeifei.github.io/cobra</a>
+</li>
 <li>Documents: <a href="https://github.com/wufeifei/cobra/wiki">https://github.com/wufeifei/cobra/wiki</a>
 </li>
 </ul>
       </section>
     </div>
-
+    <footer>
+      <p>Project maintained by <a href="https://github.com/wufeifei">wufeifei</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
