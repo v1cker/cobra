@@ -1,32 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
     <title>Cobra by wufeifei</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
+
+    <header>
+      <div class="container">
         <h1>Cobra</h1>
-        <p>Cobra - static code security scan &amp; analyse</p>
-        <p class="view"><a href="https://github.com/wufeifei/cobra">View the Project on GitHub <small>wufeifei/cobra</small></a></p>
-        <ul>
-          <li><a href="https://github.com/wufeifei/cobra/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/wufeifei/cobra/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/wufeifei/cobra">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+        <h2>Cobra - static code security scan &amp; analyse</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/wufeifei/cobra/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/wufeifei/cobra/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/wufeifei/cobra" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
         <h1>
 <a id="cobra" class="anchor" href="#cobra" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cobra</h1>
 
@@ -36,13 +37,66 @@
 
 <p>Static code analysis common security issues and scan common security vulnerabilities</p>
 
-<h3>
-<a id="screenshot" class="anchor" href="#screenshot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshot</h3>
+<h2>
+<a id="项目介绍" class="anchor" href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>项目介绍</h2>
 
-<p><img src="https://raw.githubusercontent.com/wufeifei/cobra/master/doc/SCREENSHOT.gif" alt="Cobra"></p>
+<p>眼镜蛇(Cobra)是一款定位于静态代码安全分析的工具，目标是为了找出源代码中存在的安全隐患或者漏洞。</p>
 
-<h3>
-<a id="links" class="anchor" href="#links" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Links</h3>
+<h2>
+<a id="目标用户" class="anchor" href="#%E7%9B%AE%E6%A0%87%E7%94%A8%E6%88%B7" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>目标用户</h2>
+
+<p><strong>1. 互联网企业</strong></p>
+
+<p>互联网公司可以将Cobra部署在企业内,供开发人员使用,用来扫描项目风险.
+也可以集成到内部的代码发布系统,让Cobra成为发布系统中的一环,扫描开发人员提交到线上的代码的安全性,从而限制不安全的代码上线,减少线上风险.</p>
+
+<p><strong>2. 安全公司</strong></p>
+
+<p>安全公司为互联网公司进行安全测试时,可以通过Cobra的全局项目扫描功能对甲方的所有项目进行自动代码安全审计.</p>
+
+<p><strong>3. 白帽</strong></p>
+
+<p>白帽们可以通过定制完善Cobra扫描规则, 对开源项目进行代码审计,发现其中漏洞.</p>
+
+<h2>
+<a id="应用场景" class="anchor" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>应用场景</h2>
+
+<p><strong>1.漏洞出现前（检测）</strong></p>
+
+<p>我们将互联网上常见的漏洞梳理为Cobra的检测规则，能够在漏洞被白帽子发现前就扫描出风险点并解决，防范于未然。</p>
+
+<p>例： 提前检测代码中是否存在高危文件(.tar.gz/.rar/.bak/.swp)，可以避免高危文件被下载。</p>
+
+<p><strong>2.漏洞出现中（扫描）</strong></p>
+
+<p>当企业收到白帽子提交的漏洞后，企业会在第一时间修复漏洞，并可以通过Cobra来添加扫描规则检测企业的所有项目是否存在类似漏洞。</p>
+
+<p>例： 出现了ImageMagick漏洞后，可以通过Cobra设置扫描规则对历史所有项目进行快速扫描，几分钟内就能知道企业数十个项目中哪些有用到ImageMagick组件，哪些存在漏洞，哪些可以免疫。</p>
+
+<p><strong>3.漏洞出现后（限制）</strong></p>
+
+<p>当企业修复漏洞后，可以通过设置修复/验证规则来限制以后所有提交的代码都需要过修复/验证规则，否则不予上线，减少相同漏洞再次出现的可能性。</p>
+
+<h2>
+<a id="项目截图" class="anchor" href="#%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>项目截图</h2>
+
+<h5>
+<a id="cobra自助扫描" class="anchor" href="#cobra%E8%87%AA%E5%8A%A9%E6%89%AB%E6%8F%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cobra自助扫描</h5>
+
+<p><img src="https://raw.githubusercontent.com/wufeifei/cobra/master/doc/MANUAL.png" alt="Cobra Manual Scan"></p>
+
+<h5>
+<a id="cobra扫描报告" class="anchor" href="#cobra%E6%89%AB%E6%8F%8F%E6%8A%A5%E5%91%8A" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cobra扫描报告</h5>
+
+<p><img src="https://raw.githubusercontent.com/wufeifei/cobra/master/doc/REPORT.png" alt="Cobra Report"></p>
+
+<h5>
+<a id="cobra管理后台" class="anchor" href="#cobra%E7%AE%A1%E7%90%86%E5%90%8E%E5%8F%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cobra管理后台</h5>
+
+<p><img src="https://raw.githubusercontent.com/wufeifei/cobra/master/doc/MANAGE.png" alt="Cobra Manage"></p>
+
+<h2>
+<a id="引用链接" class="anchor" href="#%E5%BC%95%E7%94%A8%E9%93%BE%E6%8E%A5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>引用链接</h2>
 
 <ul>
 <li>Homepage:  <a href="http://wufeifei.github.io/cobra">http://wufeifei.github.io/cobra</a>
@@ -52,11 +106,7 @@
 </ul>
       </section>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/wufeifei">wufeifei</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
     
   </body>
 </html>
