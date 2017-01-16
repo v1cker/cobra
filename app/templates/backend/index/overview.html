@@ -1,0 +1,176 @@
+{% extends "backend/common/layout.html" %}
+{% block overview_active %}active{% endblock %}
+{% block nav_first %}Dashboards{% endblock %}
+{% block nav_second %}Overview{% endblock %}
+{% block body %}
+    <div class="anv alg ala">
+        <h3 class="anw anx">Vulnerability statistics</h3>
+    </div>
+    <div class="fu apt alg ala ta te">
+        <div class="gh gi apu ala">
+            <h3 class="ani dm">
+                {{ data.amount.vulnerabilities_not_fixed }}
+                <small class="ank anm">0.0%</small>
+            </h3>
+            <span class="anj">Not fixed</span>
+        </div>
+        <div class="gh gi apu ala">
+            <h3 class="ani dj">
+                {{ data.amount.vulnerabilities_fixed }}
+                <small class="ank anl">0.0%</small>
+            </h3>
+            <span class="anj">Fixed</span>
+        </div>
+        <div class="gh gi apu ala">
+            <h3 class="ani dj">
+                {{ data.amount.vulnerabilities_total }}
+                <small class="ank anl">0.0%</small>
+            </h3>
+            <span class="anj">Total</span>
+        </div>
+    </div>
+    <div class="anv alg ala">
+        <h3 class="anw anx">Rule statistics</h3>
+    </div>
+    <div class="fu apt alg ala ta te">
+        <div class="gh gi apu ala">
+            <h3 class="ani dm">
+                {{ data.amount.rules_on }}
+                <small class="ank anl">0.0%</small>
+            </h3>
+            <span class="anj">Active rule</span>
+        </div>
+        <div class="gh gi apu ala">
+            <h3 class="ani dj">
+                {{ data.amount.rules_off }}
+                <small class="ank anm">0.0%</small>
+            </h3>
+            <span class="anj">Off rule</span>
+        </div>
+        <div class="gh gi apu ala">
+            <h3 class="ani dj">
+                {{ data.amount.rules_total }}
+                <small class="ank anl">0.0%</small>
+            </h3>
+            <span class="anj">Total</span>
+        </div>
+    </div>
+
+    <div class="anv alg ala">
+        <h3 class="anw anx">Scan statistics</h3>
+    </div>
+
+    <div class="fu apt">
+        <div class="gq gs ala">
+            <div class="apu ano">
+                <div class="alz">
+                    <span class="anj">Projects</span>
+                    <h2 class="ani">
+                        {{ data.amount.projects }}
+                        <small class="ank anl">0.0%</small>
+                    </h2>
+                    <hr class="ans akt">
+                </div>
+                <canvas id="sparkline1" width="378" height="94" class="apv" data-chart="spark-line" data-value="[{data:[28,68,41,43,96,45,100]}]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+            </div>
+        </div>
+        <div class="gq gs ala">
+            <div class="apu anr">
+                <div class="alz">
+                    <span class="anj">Tasks</span>
+                    <h2 class="ani">
+                        {{ data.amount.tasks }}
+                        <small class="ank anm">0.0%</small>
+                    </h2>
+                    <hr class="ans akt">
+                </div>
+                <canvas id="sparkline1" width="378" height="94" class="apv" data-chart="spark-line" data-value="[{data:[4,34,64,27,96,50,80]}]" data-labels="['a', 'b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+            </div>
+        </div>
+        <div class="gq gs ala">
+            <div class="apu anp">
+                <div class="alz">
+                    <span class="anj">Files</span>
+                    <h2 class="ani">
+                        {{ data.amount.files }}
+                        <small class="ank anl">0.0%</small>
+                    </h2>
+                    <hr class="ans akt">
+                </div>
+                <canvas id="sparkline1" width="378" height="94" class="apv" data-chart="spark-line" data-value="[{data:[12,38,32,60,36,54,68]}]" data-labels="['a', 'b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+            </div>
+        </div>
+        <div class="gq gs ala">
+            <div class="apu anq">
+                <div class="alz">
+                    <span class="anj">Lines</span>
+                    <h2 class="ani">
+                        {{ data.amount.lines }}
+                        <small class="ank anm">0.0%</small>
+                    </h2>
+                    <hr class="ans akt">
+                </div>
+                <canvas id="sparkline1" width="378" height="94" class="apv" data-chart="spark-line" data-value="[{data:[43,48,52,58,50,95,100]}]" data-labels="['a', 'b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <hr class="aky">
+
+    <div class="fu">
+        <div class="gr ali">
+            <div class="by">
+                <h4 class="ty">
+                    Hits rank
+                </h4>
+                {% for rank in data.ranks %}
+                    <a class="ph" href="#">
+                        <span class="tz"></span>
+                        <span class="dy dh">{{ rank[1] }}</span>
+                        {{ rank[0] }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="gr ali">
+            <div class="by">
+                <h4 class="ty">
+                    Amount rank
+                </h4>
+                {% for rank in data.amount.rule %}
+                    <a class="ph" href="#" data-toggle="tooltip" data-placement="right" data-container="body" data-original-title="Active - Not active - Total">
+                        <span class="tz"></span>
+                        <span class="dy dh">{{ rank['active'] }} - {{ rank['not_active'] }} - {{ rank['total'] }}</span>
+                        {{ rank['author'] }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="gr ali">
+            <div class="by">
+                <h4 class="ty">
+                    Rule hits
+                </h4>
+                {% for hit in data.hits %}
+                    <a class="ph" href="#" data-toggle="tooltip" data-placement="right" data-container="body" data-original-title="Author: {{ hit['author'] }}">
+                        <span class="dy dh">{{ hit['rank'] }}</span>
+                        {{ hit['name'] }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="by">
+        <h4 class="ty">
+            Types amount of vulnerabilities
+        </h4>
+        {% for s in data.vulnerabilities_types %}
+            <a class="ph" href="#">
+                <span class="dy dh">{{ s.amount }}</span>
+                {{ s.name }}
+            </a>
+        {% endfor %}
+    </div>
+
+{% endblock %}
