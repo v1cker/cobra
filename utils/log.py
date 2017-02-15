@@ -6,17 +6,17 @@
 
     Implements log initialize
 
-    :author:    Feei <wufeifei#wufeifei.com>
+    :author:    Feei <feei#feei.cn>
     :homepage:  https://github.com/wufeifei/cobra
     :license:   MIT, see LICENSE for more details.
-    :copyright: Copyright (c) 2016 Feei. All rights reserved
+    :copyright: Copyright (c) 2017 Feei. All rights reserved
 """
 import os
 import logging.config
 from utils import config
 
 
-class Log:
+class Log(object):
     def __init__(self):
         logs_directory = config.Config('cobra', 'logs_directory').value
         logs_directory = os.path.join(config.Config().project_directory, logs_directory)

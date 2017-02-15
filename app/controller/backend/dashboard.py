@@ -6,10 +6,10 @@
 
     Implements dashboard controller
 
-    :author:    Feei <wufeifei#wufeifei.com>
+    :author:    Feei <feei#feei.cn>
     :homepage:  https://github.com/wufeifei/cobra
     :license:   MIT, see LICENSE for more details.
-    :copyright: Copyright (c) 2016 Feei. All rights reserved
+    :copyright: Copyright (c) 2017 Feei. All rights reserved
 """
 import time
 import datetime
@@ -19,9 +19,8 @@ from sqlalchemy.sql import func, and_
 
 from . import ADMIN_URL
 from app import web, db
-from app.CommonClass.ValidateClass import ValidateClass
-from app.models import CobraRules, CobraVuls, CobraTaskInfo
-from app.models import CobraLanguages, CobraResults, CobraProjects
+from utils.validate import ValidateClass
+from app.models import CobraRules, CobraVuls, CobraTaskInfo, CobraLanguages, CobraResults, CobraProjects
 
 __author__ = "lightless"
 __email__ = "root@lightless.me"

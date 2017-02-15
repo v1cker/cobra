@@ -6,16 +6,16 @@
 
     Implements languages controller
 
-    :author:    Feei <wufeifei#wufeifei.com>
+    :author:    Feei <feei#feei.cn>
     :homepage:  https://github.com/wufeifei/cobra
     :license:   MIT, see LICENSE for more details.
-    :copyright: Copyright (c) 2016 Feei. All rights reserved
+    :copyright: Copyright (c) 2017 Feei. All rights reserved
 """
 from flask import request, jsonify, render_template, redirect
 
 from .import ADMIN_URL
 from app import web, db
-from app.CommonClass.ValidateClass import ValidateClass
+from utils.validate import ValidateClass
 from app.models import CobraLanguages
 
 

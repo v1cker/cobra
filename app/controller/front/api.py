@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 
 """
-    controller.api
-    ~~~~~~~~~~~~~~
+    controller.front.api
+    ~~~~~~~~~~~~~~~~~~~~
 
     External API interface implementation
     :doc:       http://cobra-docs.readthedocs.io/en/latest/API
 
-    :author:    Feei <wufeifei#wufeifei.com>
+    :author:    Feei <feei#feei.cn>
     :homepage:  https://github.com/wufeifei/cobra
     :license:   MIT, see LICENSE for more details.
-    :copyright: Copyright (c) 2016 Feei. All rights reserved
+    :copyright: Copyright (c) 2017 Feei. All rights reserved
 """
 import os
 import logging
@@ -18,7 +18,8 @@ import traceback
 from utils import config, common
 from flask import request, jsonify
 from werkzeug.utils import secure_filename
-from app import web, db, CobraResults, CobraRules, CobraProjects, CobraVuls, CobraAuth, CobraTaskInfo
+from app import db, web
+from app.models import CobraResults, CobraRules, CobraProjects, CobraVuls, CobraAuth, CobraTaskInfo
 from engine import scan
 
 logging = logging.getLogger(__name__)

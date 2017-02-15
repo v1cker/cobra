@@ -5,7 +5,7 @@ Rename **config.example** in the Cobra root directory to **config**.
 #
 # Configure Cobra to run the domain name, but do not need to configure it
 #
-domain: cobra.wufeifei.com
+domain: cobra.feei.cn
 
 #
 # Configure the host
@@ -64,6 +64,15 @@ backend:redis://:password@127.0.0.1:7890/4
 #
 [database]
 mysql: mysql+mysqldb://root:yourpassword@127.0.0.1:3306/cobra
+
+[email]
+host:
+port:
+user:
+password:
+
+[report]
+to:
 
 #
 # SVN account

@@ -7,10 +7,10 @@
 
     Implements framework detection
 
-    :author:    Feei <wufeifei#wufeifei.com>
+    :author:    Feei <feei#feei.cn>
     :homepage:  https://github.com/wufeifei/cobra
     :license:   MIT, see LICENSE for more details.
-    :copyright: Copyright (c) 2016 Feei. All rights reserved
+    :copyright: Copyright (c) 2017 Feei. All rights reserved
 """
 import os
 import logging
@@ -18,7 +18,7 @@ import logging
 logging = logging.getLogger(__name__)
 
 
-class Detection:
+class Detection(object):
     def __init__(self, project_directory=None):
         self.project_directory = project_directory
         self.rules = [

@@ -6,10 +6,10 @@
 
     Implements core scan logic
 
-    :author:    Feei <wufeifei#wufeifei.com>
+    :author:    Feei <feei#feei.cn>
     :homepage:  https://github.com/wufeifei/cobra
     :license:   MIT, see LICENSE for more details.
-    :copyright: Copyright (c) 2016 Feei. All rights reserved
+    :copyright: Copyright (c) 2017 Feei. All rights reserved
 """
 import os
 import re
@@ -17,14 +17,15 @@ import logging
 import traceback
 from engine import parse
 from pickup.file import File
-from app import db, CobraResults
+from app.models import CobraResults
+from app import db
 from utils.queue import Queue
 from utils.config import Config
 
 logging = logging.getLogger(__name__)
 
 
-class Core:
+class Core(object):
     def __init__(self, result, rule, project_name, white_list):
         """
         Initialize

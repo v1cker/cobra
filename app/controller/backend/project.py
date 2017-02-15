@@ -6,10 +6,10 @@
 
     Implements projects controller
 
-    :author:    Feei <wufeifei#wufeifei.com>
+    :author:    Feei <feei#feei.cn>
     :homepage:  https://github.com/wufeifei/cobra
     :license:   MIT, see LICENSE for more details.
-    :copyright: Copyright (c) 2016 Feei. All rights reserved
+    :copyright: Copyright (c) 2017 Feei. All rights reserved
 """
 import time
 
@@ -18,7 +18,7 @@ from flask import render_template, request, jsonify, redirect
 from . import ADMIN_URL
 from utils import config
 from app import web, db
-from app.CommonClass.ValidateClass import ValidateClass, login_required
+from utils.validate import ValidateClass, login_required
 from app.models import CobraProjects
 
 __author__ = "lightless"

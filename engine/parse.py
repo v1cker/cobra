@@ -7,10 +7,10 @@
 
     Implements code syntax parse
 
-    :author:    Feei <wufeifei#wufeifei.com>
+    :author:    Feei <feei#feei.cn>
     :homepage:  https://github.com/wufeifei/cobra
     :license:   MIT, see LICENSE for more details.
-    :copyright: Copyright (c) 2016 Feei. All rights reserved
+    :copyright: Copyright (c) 2017 Feei. All rights reserved
 """
 import os
 import sys
@@ -24,7 +24,7 @@ log.Log()
 logging = logging.getLogger(__name__)
 
 
-class Parse:
+class Parse(object):
     def __init__(self, rule, file_path, line, code):
         logging.info('###############################')
         self.rule = rule

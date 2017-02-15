@@ -6,10 +6,10 @@
 
     Implements decompress file
 
-    :author:    Feei <wufeifei#wufeifei.com>
+    :author:    Feei <feei#feei.cn>
     :homepage:  https://github.com/wufeifei/cobra
     :license:   MIT, see LICENSE for more details.
-    :copyright: Copyright (c) 2016 Feei. All rights reserved
+    :copyright: Copyright (c) 2017 Feei. All rights reserved
 """
 import os
 import shutil
@@ -37,7 +37,7 @@ dc.decompress()
 """
 
 
-class Decompress:
+class Decompress(object):
     """Decompress zip, rar and tar.gz
 
     filename: filename without path

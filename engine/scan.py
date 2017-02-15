@@ -7,17 +7,18 @@
 
     Implements scan
 
-    :author:    Feei <wufeifei#wufeifei.com>
+    :author:    Feei <feei#feei.cn>
     :homepage:  https://github.com/wufeifei/cobra
     :license:   MIT, see LICENSE for more details.
-    :copyright: Copyright (c) 2016 Feei. All rights reserved
+    :copyright: Copyright (c) 2017 Feei. All rights reserved
 """
 import os
 import time
 import subprocess
 import getpass
 import logging
-from app import db, CobraProjects, CobraTaskInfo
+from app.models import CobraProjects, CobraTaskInfo
+from app import db
 from utils import config, decompress, log
 from pickup import git
 from engine import detection
@@ -26,7 +27,7 @@ log.Log()
 logging = logging.getLogger(__name__)
 
 
-class Scan:
+class Scan(object):
     def __init__(self, target):
         """
         Set target
